@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<h1>Basket Calculation</h1>
-		<form method="post" action="cible.php">
+		<form method="post" action="form.php">
 			
 			<h2>Product 1</h2>
 			<p>Price</p> <input type="number" name="price1" />
@@ -27,5 +27,13 @@
 			<br />
 			<input class="submit" type="submit" value="Do the math" />
 		</form>
+
+		<?php
+			$full_price_1 = ($_POST[price1] + $_POST[vat1]) * $_POST[quantity1];
+			$full_price_2 = ($_POST[price2] + $_POST[vat2]) * $_POST[quantity2];
+			$full_price_3 = ($_POST[price3] + $_POST[vat3]) * $_POST[quantity3];
+			$total = $full_price_1 + $full_price_2 + $full_price_3;
+			echo "Your basket is up to $total$.";
+		?>
 	</body>
 </html>
