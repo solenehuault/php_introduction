@@ -30,18 +30,29 @@
 		</form>
 		
 		<?php
-			$all_prices = array(
-				$_POST[name1] => $_POST[price1], 
-				$_POST[name2] => $_POST[price2], 
-				$_POST[name3] => $_POST[price3], 
-				$_POST[name4] => $_POST[price4]
-			);
+			
+			$all_prices = array($_POST[price1], $_POST[price2], $_POST[price3], $_POST[price4]);
 
-			print_r($all_prices);
 			sort($all_prices);
-			print_r($all_prices);
-			$name = array_keys($all_prices);
-			print_r($name);
+			
+			echo "The cheaper product is ";
+			
+			switch ($all_prices[0]) {
+				case $_POST[price1]:
+					echo $_POST[name1];
+					break;
+				case $_POST[price2]:
+					echo $_POST[name2];
+					break;
+				case $_POST[price3]:
+					echo $_POST[name3];
+					break;
+				case $_POST[price4]:
+					echo $_POST[name4];
+					break;
+				default:
+					echo "error";
+			}
 		?>
 
 	</body>
