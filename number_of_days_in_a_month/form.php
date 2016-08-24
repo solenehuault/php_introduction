@@ -25,24 +25,23 @@
 		</form>
 
 		<?php
-			if (isset($_POST['month']))
-			{
-			switch ($_POST['month']) {
-				case jan:
-				case mar:
-				case may:
-				case jul:
-				case aug:
-				case oct:
-				case dec:
-					echo "31";
-					break;
-				case feb:
-					echo "28";
-					break;
-				default:
-					echo "30";
-			}
+			if (isset($_POST['month'])) {
+				switch ($_POST['month']) {
+					case jan:
+					case mar:
+					case may:
+					case jul:
+					case aug:
+					case oct:
+					case dec:
+						echo "31";
+						break;
+					case feb:
+						echo "28";
+						break;
+					default:
+						echo "30";
+				}
 			}
 		?>
 	</body>
