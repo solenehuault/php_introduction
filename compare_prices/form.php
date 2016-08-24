@@ -8,7 +8,7 @@
 
 	<body>
 		<h1>Compare prices</h1>
-		<form method="post" action="cible.php">
+		<form method="post" action="form.php">
 			<h2>Product 1</h2>
 			<p>Name</p> <input type="text" name="name1" />
 			<p>Price</p> <input type="number" name="price1" />
@@ -30,20 +30,18 @@
 		</form>
 		
 		<?php
-			$all_prices = array($_POST[name1] => $_POST[price1], $_POST[name2] =    > $_POST[price2], $_POST[name3] => $_POST[price3], $_POST[name4] => $_    POST[price4]);
+			$all_prices = array(
+				$_POST[name1] => $_POST[price1], 
+				$_POST[name2] => $_POST[price2], 
+				$_POST[name3] => $_POST[price3], 
+				$_POST[name4] => $_POST[price4]
+			);
 
+			print_r($all_prices);
 			sort($all_prices);
-			$cheap = key($all_prices);
-
-			echo current($all_prices);
-
-			asort($all_prices);
-			$expensive = key($all_prices);
-
-			echo current($all_prices);
-
-			echo "The cheapest product is $cheap, ";
-			echo "and the most expensive is $expensive.";
+			print_r($all_prices);
+			$name = array_keys($all_prices);
+			print_r($name);
 		?>
 
 	</body>
