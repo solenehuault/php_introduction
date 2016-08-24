@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Bank</title>
+	</head>
+	<body>
+		<h1>The Bank Account</h1>
+		<form method="post" action="form.php">
+			<input type="number" name="account"></input>
+			<input type="submit" value="Balance"></input>
+		</form>
+
+		<?php
+			if ($_POST['account'] < 0) {
+				echo "Deficit";
+			}
+			elseif ($_POST['account'] > 0) {
+				echo "Credited";
+			}
+			else {
+				echo "In balance";
+			}
+		?>
+	</body>
+</html>
