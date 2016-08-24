@@ -12,9 +12,13 @@
 		</form>
 
 		<?php
-			$length = strlen($_POST['date']);
-			if ($length != 10) {
-				echo "Invalid date!";
+			$date = $_POST['date'];
+			$length = strlen($date);
+			if ($length == 10) {
+				echo "Nice date you got there!";
+			}
+			else {
+				echo "Invalid date";
 			}
 		?>
 	</body>
