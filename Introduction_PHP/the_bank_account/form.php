@@ -13,13 +13,13 @@
 
 		<?php
 			if ($_POST['account'] < 0) {
-				echo "Deficit";
+				echo "<p>Deficit</p>";
 			}
 			elseif ($_POST['account'] > 0) {
-				echo "Credited";
+				echo "<p>Credited</p>";
 			}
 			else {
-				echo "In balance";
+				echo "<p>In balance</p>";
 			}
 		?>
 	</body>

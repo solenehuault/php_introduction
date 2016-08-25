@@ -40,10 +40,10 @@
 
 			asort($all_prices);
 			$name = key($all_prices);
-			echo "The cheaper product is $name, ";
+			echo "<p>The cheaper product is $name. </p>";
 			arsort($all_prices);
 			$name = key($all_prices);
-			echo "The most expensive product is $name.";
+			echo "<p>The most expensive product is $name.</p>";
 		?>
 
 	</body>

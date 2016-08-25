@@ -30,14 +30,14 @@
 						$year <= 2900 && $year >= 1900 && 
 						$date[2] == '/' &&
 						$date[5] == '/') {
-					echo "Nice date you got there!";
+					echo "<p>Nice date you got there!</p>";
 				}
 				else {
-					echo "Invalid date!";
+					echo "<p>Invalid date!</p>";
 				}
 			}
 			else {
-				echo "Invalid date";
+				echo "<p>Invalid date</p>";
 			}
 		?>
 	</body>

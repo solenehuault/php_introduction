@@ -34,13 +34,13 @@
 					case aug:
 					case oct:
 					case dec:
-						echo "31";
+						echo "<p>31</p>";
 						break;
 					case feb:
-						echo "28";
+						echo "<p>28</p>";
 						break;
 					default:
-						echo "30";
+						echo "<p>30</p>";
 				}
 			}
 		?>

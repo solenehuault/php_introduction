@@ -35,7 +35,7 @@
 				}
 			}
 			else {
-				echo "error";
+				echo "<p>The day is invalid</p>";
 			}
 		?>
 	</body>

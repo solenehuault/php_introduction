@@ -33,7 +33,7 @@
 			$full_price_2 = ($_POST[price2] + $_POST[vat2]) * $_POST[quantity2];
 			$full_price_3 = ($_POST[price3] + $_POST[vat3]) * $_POST[quantity3];
 			$total = $full_price_1 + $full_price_2 + $full_price_3;
-			echo "Your basket is up to $total$.";
+			echo "<p>Your basket is up to $total$.</p>";
 		?>
 	</body>
 </html>
