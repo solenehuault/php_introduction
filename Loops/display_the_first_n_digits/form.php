@@ -23,18 +23,17 @@
 					echo "<li";
 					
 					if ($i % 2 == 0) {
-						echo " class='blue'";
+						echo " class='blue";
 					}
 					else {
-						echo " class='orange'";
+						echo " class='orange";
 					}
 
-					$perfect = sqrt($i);
-					$perfect = is_numeric($perfect);
-					if ($perfect) {
-						echo " \"bold\"";
+					$flor = floor(sqrt($i));
+					if ($i == $flor * $flor) {
+						echo " heavy";
 					}
-					echo ">$i</li>";
+					echo "'>$i</li>";
 				}
 				echo "</ul>";
 			}
