@@ -8,15 +8,14 @@
 		<h1>Alternative Parking</h1>
 		<form method="post" action="form.php">
 			<p>Day of the month</p>
-			<input type="number" name="date"></input>
+			<input type="number" name="date" min="1" max="31"></input>
 			<p>House number before which you parked</p>
-			<input type="number" name="house"></input>
+			<input type="number" name="house" min="1"></input>
 			<br /><br />
 			<input type="submit" value="How well did you park?"></input>
 		</form>
 
 		<?php
-			if ($_POST['date'] > 0 && $_POST['date'] <= 31) {
 				if ($_POST['date'] < 15) {
 					if ($_POST['house'] % 2 == 0) {
 						echo "<p>You parked well!</p>";
@@ -33,10 +32,6 @@
 						echo "<p>Go park on the other side!</p>";
 					}
 				}
-			}
-			else {
-				echo "<p>The day is invalid</p>";
-			}
 		?>
 	</body>
 </html>
