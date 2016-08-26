@@ -14,11 +14,14 @@
 		</form>
 
 		<?php
-			$_SESSION['number'] = rand(1, 100);
-			echo $_SESSION['number'];
-			$_SESSION['try'] = 1;
+			if (!isset($_SESSION['number'])) {
+				$_SESSION['number'] = rand(1, 100);
+			}
+			if (!isset($_SESSION['try'])) {
+				$_SESSION['try'] = 1;
+			}
 			if ($_SESSION['try'] <= 8) {
-				if (isset($_POST)) {
+				if (!isset($_POST)) {
 					$_SESSION['input'] = $_POST['input'];
 					if ($_SESSION['number'] < $_SESSION['input']) {
 						echo "<p>The number you seek is smaller than the one you gave...</p>";
