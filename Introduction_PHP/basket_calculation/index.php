@@ -8,7 +8,6 @@
 	<body>
 		<h1>Basket Calculation</h1>
 		<form method="post" action="index.php">
-			<div>	
 			<fieldset>
 				<legend>Product 1</legend>
 				<p>Price</p> <input type="number" name="price1" />
@@ -29,10 +28,7 @@
 				<p>VAT rate (%)</p> <input type="number" name="vat3" />
 				<p>Quantity</p> <input type="number" name="quantity3" />
 			</fieldset>
-			</div>
-			<div>
 			<input class="submit" type="submit" value="Do the math" />
-			</div>
 		</form>
 
 		<?php
@@ -40,7 +36,7 @@
 			$full_price_2 = ($_POST[price2] + $_POST[vat2]) * $_POST[quantity2];
 			$full_price_3 = ($_POST[price3] + $_POST[vat3]) * $_POST[quantity3];
 			$total = $full_price_1 + $full_price_2 + $full_price_3;
-			echo "<div><p>Your basket is up to $total$.</p></div>";
+			echo "<p>Your basket is up to $total$.</p>";
 		?>
 	</body>
 </html>
