@@ -30,40 +30,42 @@
 					
 					if ($_POST['cypher'] == "encrypt") {
 						
-						if (($ascii >= 65 && $ascii < 90) ||
-								($ascii >= 97 && $ascii < 122)) {
+						if ($ascii >= 65 && $ascii <= 90) {
 							$ascii = $ascii + $key;
+							if ($ascii > 90) {
+								$ascii = $ascii - 26;
+							}
 						}
-						
-						elseif ($ascii == 90) {
-							$ascii = 64 + $key;
-						}
-						
-						elseif ($ascii == 122) {
-							$ascii = 96 + $key;
+						if ($ascii >= 97 && $ascii <= 122) {
+							$ascii = $ascii + $key;
+							if ($ascii > 122) {
+								$ascii = $ascii - 26;
+							}
 						}
 						array_push($tab, chr($ascii));
 					}
 					
 					else {
 						
-						if (($ascii > 65 && $ascii <= 90) ||
-								($ascii > 97 && $ascii <= 122)) {
+						if ($ascii >= 65 && $ascii <= 90) { 
 							$ascii = $ascii - $key;
+							if ($ascii < 65) {
+								$ascii = $ascii + 26;
+							}
+						}
+						elseif ($ascii >= 97 && $ascii <= 122) {
+							$ascii = $ascii - $key;
+							if ($ascii < 97) {
+								$ascii = $ascii + 26;
+							}
 						}
 						
-						elseif ($ascii == 65) {
-							$ascii = 91 - $key;
-						}
-						
-						elseif ($ascii == 97) {
-							$ascii = 123 - $key;
-						}
 						array_push($tab, chr($ascii));
 					}
 				}
 				$new_message = implode("", $tab);
 				print ($new_message);
+				echo "<br /><p>Key: ".$key;
 			}
 		?>
 	</body>
