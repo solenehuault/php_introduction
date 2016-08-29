@@ -17,26 +17,34 @@
 			if (!isset($_SESSION['number'])) {
 				$_SESSION['number'] = rand(1, 100);
 			}
+
 			if (!isset($_SESSION['try'])) {
 				$_SESSION['try'] = 1;
 			}
-			if ($_SESSION['try'] <= 8) {
-				if (!isset($_POST)) {
+
+			if (isset($_POST['input'])) {
+				if ($_SESSION['try'] <= 8) {
 					$_SESSION['input'] = $_POST['input'];
+					
 					if ($_SESSION['number'] < $_SESSION['input']) {
 						echo "<p>The number you seek is smaller than the one you gave...</p>";
 					}
+					
 					elseif ($_SESSION['number'] > $_SESSION['input']) {
 						echo "<p>The number you seek is greater than the one you gave...</p>";
 					}
+					
 					else {
 						echo "Congrats, you guessed the number on your ",$_SESSION['try']," try!";
 					}
+					
+					echo "<p>You are at your ".$_SESSION['try']." try of 8.</p>";
+					$_SESSION['try']++;
 				}
-				$_SESSION['try']++;
-			}
-			else {
-				echo "I'm so really sorry, the number was ",$_SESSION['number'];
+				
+				else {
+					echo "I'm so really sorry, the number was ",$_SESSION['number'];
+				}
 			}
 		?>
 	</body>
