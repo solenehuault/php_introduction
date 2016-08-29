@@ -1,7 +1,12 @@
-body {
-	text-align: center;
+fieldset {
+	display: inline-block;
+}
+
+div {
+	display: flex;
+	justify-content: space-around;
 }
 
 .submit {
-	margin: 20px;
+	margin-top: 20px;
 }
