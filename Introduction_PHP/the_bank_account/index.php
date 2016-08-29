@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h1>The Bank Account</h1>
-		<form method="post" action="form.php">
+		<form method="post" action="index.php">
 			<input type="number" name="account"></input>
 			<input type="submit" value="Balance"></input>
 		</form>

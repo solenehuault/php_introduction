@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h1>Validate a date</h1>
-		<form method="post" action="form.php">
+		<form method="post" action="index.php">
 			<input type="text" name="date" placeholder="mm/jj/yyyy"></input>
 			<input type="submit" value="is the date valid?"></input>
 		</form>

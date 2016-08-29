@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<h1>Basket Calculation</h1>
-		<form method="post" action="form.php">
+		<form method="post" action="index.php">
 			
 			<h2>Product 1</h2>
 			<p>Price</p> <input type="number" name="price1" />

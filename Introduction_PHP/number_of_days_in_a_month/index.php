@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h1>Number of days in a month</h1>
-		<form method="post" action="form.php">
+		<form method="post" action="index.php">
 			<select name="month">
 				<option value="jan">January</option>
 				<option value=feb">February</option>
