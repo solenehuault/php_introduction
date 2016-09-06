@@ -30,7 +30,19 @@
 			try {
 				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				echo "Connected successfully";
+				echo "Connected successfully<br />";
+
+				if (isset($_POST['name']) &&
+						isset($_POST['color']) &&
+						isset($_POST['brand']) &&
+						isset($_POST['cons']) &&
+						isset($_POST['power']) &&
+						isset($_POST['price'])) {
+
+				}
+				else {
+					echo "Unknown input";
+				}
 			}
 			catch(PDOException $e) {
 				echo "Connection failed: ". $e->getMessage();
