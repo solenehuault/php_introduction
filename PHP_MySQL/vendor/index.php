@@ -38,10 +38,27 @@
 						isset($_POST['cons']) &&
 						isset($_POST['power']) &&
 						isset($_POST['price'])) {
-
+					$sql = "INSERT INTO vehicle (name, color, brand, consumption, power, price) 
+									VALUES ('$_POST[name]', '$_POST[color]', '$_POST[brand]', '$_POST[cons]', '$_POST[power]', '$_POST[price]')";
+					$conn->exec($sql);
+					echo "New record created successfully";
 				}
 				else {
 					echo "Unknown input";
+				}
+
+				echo "<h2>Vehicle Table</h2>";
+				$sql = "SELECT name, color, brand, consumption, power, price FROM vehicle";
+				$result = $conn->query($sql);
+				if ($result->num_rows > 0) {
+					echo "<table><tr> <th>Name</th> <th>Color</th> <th>Brand</th> <th>Consumption</th> <th>Power</th> <th>Price</th>";
+					while($row = $result->fetch_assoc()) {
+						echo "<tr><td>".$row['name']."</td><td>".$row['color']."</td><td>".$row['brand']."</td><td>".$row['consumption']."</td><td>".$row['power']."</td><td>".$row['price']."</td></tr>";
+					}
+					echo "</table>";
+				}
+				else {
+					echo "0 result";
 				}
 			}
 			catch(PDOException $e) {
