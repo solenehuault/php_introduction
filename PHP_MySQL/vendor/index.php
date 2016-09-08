@@ -30,7 +30,7 @@
 			try {
 				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				echo "Connected successfully<br />";
+				echo "Connected successfully to the database<br />";
 
 				if (isset($_POST['name']) &&
 						isset($_POST['color']) &&
@@ -46,8 +46,35 @@
 				else {
 					echo "Unknown input";
 				}
+		?>
+			<h2>Vehicle Table</h2>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Color</th>
+					<th>Brand</th>
+					<th>Consumption</th>
+					<th>Power</th>
+					<th>Price</th>
+				</tr>
 
-				echo "<h2>Vehicle Table</h2>";
+		<?php 
+			class TableRows extends RecursiveIteratorIterator {
+				function _construct($it) {
+					parent::_construct($it, self::LEAVEs_ONLY);
+				}
+				function current() {
+					return "<td>".parent::current()."</td>";
+				}
+				function beginChildren() {
+					echo "<tr>";
+				}
+				function endChildren() {
+					echo "</tr>"."\n";
+				}
+			}
+		?>
+		<?php
 				$stmt = $conn->prepare("SELECT name, color, brand, consumption, power, price FROM vehicle");
 				$stmt->execute();
 
